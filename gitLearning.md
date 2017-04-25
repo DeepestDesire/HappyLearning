@@ -35,3 +35,14 @@
 ## 打印当前路径
 
 	pwd  // print /Users/georgecharles/Documents/IOSDemo/HappyLearning
+	
+	
+	
+## 在工作区对某个文件发生修改 删除修改
+
+    git checkout <file>
+
+将文件reset到最近一次提交
+
+
+
