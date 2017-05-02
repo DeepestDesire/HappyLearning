@@ -81,8 +81,6 @@ Method |Format |Property |type
 **parameters**|void 
 **returns** |void
 
-
-
 11. wxPay:  跳转微信支付
 ------
 Method |Format |Property |type 
@@ -169,4 +167,66 @@ Method |Format |Property |type
 ---- |---- |---- |---- |
 **parameters**|void 
 **returns** |void
+
+
+
+
+
+# IOS WebView bridge ( Native -> H5)
+
+1. postDetailInfo: 获取分享相关数据
+------------
+Method |Format |Type |Type  
+---- |---- |---- |---- |
+**parameters** | void
+**returns** |JSON |post_id |Int |
+  ||is_self |String |
+  ||is_store |String |
+  ||post_summary |String |
+  ||post_headimg |String |
+  ||link |String |
+  ||messageType |String (可选)|
+  ||notesBookTitle |String (可选) |
+  
+  
+2. appShareSwitch: 是否需要隐藏分享按钮
+-------
+Method |Format |Type |Type  
+---- |---- |---- |---- |
+**parameters** | void
+**returns** |对象 |isShow |String |
+
+
+3. getCurrentTheme: 获取当前页面中被选中的主题
+-------
+Method |Format |Type |Type  
+---- |---- |---- |---- |
+**parameters** | void
+**returns** |Json |theme_id |String |
+  ||theme_name |String |
+  
+
+4. reloadTheme: 刷新对应主题页面
+-------
+Method |Format |Type |Type  
+---- |---- |---- |---- |
+**parameters**|void 
+**returns** |void
+
+
+5. forceReload: 强制刷新页面
+-------
+Method |Format |Type |Type  
+---- |---- |---- |---- |
+**parameters**|void 
+**returns** |void
+
+6. forceReload: 清楚登陆身份
+-------
+Method |Format |Type |Type  
+---- |---- |---- |---- |
+**parameters**|void 
+**returns** |void
+
+
 
