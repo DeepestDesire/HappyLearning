@@ -1,0 +1,1 @@
+# this is .bash_profile guide book
