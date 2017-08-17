@@ -63,7 +63,7 @@ Method |Format |Property |Type
 **parameters**|void 
 **returns** |void
 
-9. setWXShareConfig: 隐藏页面的右上角菜单按钮
+9. setWXShareConfig: 活动分享
 ------
 Method |Format |Property |Type 
 ---- |---- |---- |---- |
