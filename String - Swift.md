@@ -1,13 +1,13 @@
 # String  --   Swift
 
 
- check String length
+check String length
 
-        if UUIDString.characters.count == 0 {
-              return UUIDString as! String
-        }else{
-            return UUIDString as! String
-        }
+if UUIDString.characters.count == 0 {
+    return UUIDString as! String
+}else{
+    return UUIDString as! String
+}
 
 
 删除 String 最后一个字符 character
