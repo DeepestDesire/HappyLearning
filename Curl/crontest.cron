@@ -1,0 +1,1 @@
+*/6 * * * *  /Users/george/Code/HappyLearning/Curl/jd.sh  >> ~/jd_log.txt
