@@ -1,1 +1,1 @@
-*/6 * * * *  /Users/george/Code/HappyLearning/Curl/jd.sh  >> ~/jd_log.txt
+*/1 * * * * /bin/date  >> /Users/george/jdlog.txt

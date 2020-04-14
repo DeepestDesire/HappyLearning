@@ -91,10 +91,10 @@ function callEidfingerRisk_3AB9D23F7A4B3C9B(f) {
     } catch (m) {}
 }
 
-function getJdEid(callback, m, r) {
-    if ("function" != typeof callback) throw Error("callback must be a function.");
+function getJdEid(f, m, r) {
+    if ("function" != typeof f) throw Error("callback must be a function.");
     if (void 0 === m && (m = 1), void 0 === r && (r = 15), !_eidFlag && m < r) setTimeout(function() {
-        getJdEid(callback, m, r)
+        getJdEid(f, m, r)
     }, 15 * m), m++;
     else {
         _JdTdudfp.eid = !_JdEid || 120 < _JdEid.length ? "" : _JdEid;
@@ -102,7 +102,7 @@ function getJdEid(callback, m, r) {
         try {
             _JdTdudfp.date = Date.parse(new Date), _JdTdudfp.token = "string" == typeof jd_risk_token_id ? jd_risk_token_id : ""
         } catch (u) {}
-        callback(_JdEid, _JdJrTdRiskFpInfo, _JdTdudfp)
+        f(_JdEid, _JdJrTdRiskFpInfo, _JdTdudfp)
     }
 }
 
@@ -174,7 +174,6 @@ if (void 0 === _jd_load_td_finger_flag) {
             var f = document.createElement("script");
             f.src = _CurrentPageProtocol + _JdJrTdRiskDomainName + "/y.html?v=" + Math.random() + "&o=" + _CurrentPageUrl;
             f.async = !1;
-            debugger
             document.body.appendChild(f)
         }
     }();
@@ -1145,7 +1144,3 @@ if (void 0 === _jd_load_td_finger_flag) {
         }), td_collect.init(), void 0 !== document.body && document.body ? setTimeout(td_collect_exe, 100) : td_collect_exe())
     }()
 };
-
-getJdEid(function(eid, fp, unfp) {
-    console.log(1, unfp)
-})

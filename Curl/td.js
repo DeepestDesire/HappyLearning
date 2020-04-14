@@ -1,3 +1,58 @@
+var document = {
+    location: {
+        protocol: "https:",
+        href: {
+            toString: function() {
+                return "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fwww.jd.com%2F"
+            }
+        }
+    },
+    createElement: function(params) {
+        return {
+            createId: 1
+        }
+    },
+    body: {
+        appendChild: function(params) {
+
+        }
+    }
+}
+
+var window = {
+    indexedDB: {
+
+    }
+}
+var screen = {
+    availHeight: 947,
+    availLeft: 0,
+    availTop: 23,
+    availWidth: 1680,
+    colorDepth: 24,
+    height: 1050,
+    orientation: {
+        ScreenOrientation: {
+            angle: 0,
+            type: "landscape-primary",
+            onchange: null
+        }
+    },
+    pixelDepth: 24,
+    width: 1680,
+}
+
+
+var navigator = {
+    userAgent: {
+        toLowerCase: function() {
+            return "mozilla/5.0 (macintosh; intel mac os x 10_14_5) applewebkit/537.36 (khtml, like gecko) chrome/75.0.3770.100 safari/537.36"
+        },
+
+    },
+    language: 'en-US',
+}
+
 function td_collect_exe() {
     ! function() {
         var f = _JdJrTdRiskFp.getData();
@@ -91,10 +146,10 @@ function callEidfingerRisk_3AB9D23F7A4B3C9B(f) {
     } catch (m) {}
 }
 
-function getJdEid(callback, m, r) {
-    if ("function" != typeof callback) throw Error("callback must be a function.");
+function getJdEid(f, m, r) {
+    if ("function" != typeof f) throw Error("callback must be a function.");
     if (void 0 === m && (m = 1), void 0 === r && (r = 15), !_eidFlag && m < r) setTimeout(function() {
-        getJdEid(callback, m, r)
+        getJdEid(f, m, r)
     }, 15 * m), m++;
     else {
         _JdTdudfp.eid = !_JdEid || 120 < _JdEid.length ? "" : _JdEid;
@@ -102,7 +157,7 @@ function getJdEid(callback, m, r) {
         try {
             _JdTdudfp.date = Date.parse(new Date), _JdTdudfp.token = "string" == typeof jd_risk_token_id ? jd_risk_token_id : ""
         } catch (u) {}
-        callback(_JdEid, _JdJrTdRiskFpInfo, _JdTdudfp)
+        f(_JdEid, _JdJrTdRiskFpInfo, _JdTdudfp)
     }
 }
 
@@ -174,7 +229,6 @@ if (void 0 === _jd_load_td_finger_flag) {
             var f = document.createElement("script");
             f.src = _CurrentPageProtocol + _JdJrTdRiskDomainName + "/y.html?v=" + Math.random() + "&o=" + _CurrentPageUrl;
             f.async = !1;
-            debugger
             document.body.appendChild(f)
         }
     }();
@@ -1138,6 +1192,15 @@ if (void 0 === _jd_load_td_finger_flag) {
         _JdTdudfp = {},
         _jd_e_joint_;
     ! function() {
+        var JDJRTDLOCALSTORAGE = function() {
+            this.get = function(key, callback) {
+                return 'dfadsfas'
+            }
+            this.jdtdstorage_local_storage = function(key, callback) {
+                return 'dfadsfas'
+            }
+        }
+
         _jd_load_td_finger_flag && (_JdJrRiskClientStorage = new JDJRTDLOCALSTORAGE, _JdJrTdRiskFp = "undefined" != typeof module && module.exports ? new module.exports : new JdJrTdRiskFinger, _JdJrRiskClientStorage.get("3AB9D23F7A4B3C9B", function(f) {
             void 0 != f && null != f && 32 <= f.length && (_JdEid = f, _eidFlag = !0)
         }), _JdJrTdRiskFp.get(function(f) {
@@ -1146,6 +1209,8 @@ if (void 0 === _jd_load_td_finger_flag) {
     }()
 };
 
+
+
 getJdEid(function(eid, fp, unfp) {
-    console.log(1, unfp)
+    console.log(11, unfp)
 })
